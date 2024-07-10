@@ -60,11 +60,32 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'login.urls'
+import os;
+# TEMPLATES = [
+#     {
+#         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+#         'DIRS': [BASE_DIR / 'templates'],
+#         'APP_DIRS': True,
+#         'OPTIONS': {
+#             'context_processors': [
+#                 'django.template.context_processors.debug',
+#                 'django.template.context_processors.request',
+#                 'django.contrib.auth.context_processors.auth',
+#                 'django.contrib.messages.context_processors.messages',
+#             ],
+#         },
+#     },
+# ]
 
+
+DEBUG = False
+ALLOWED_HOSTS = ['*']  # Adjust this to your domain or server IP
+
+# Add your templates directory if not already included
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates'],
+         'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -77,7 +98,16 @@ TEMPLATES = [
     },
 ]
 
-
+# Middleware to ensure that the 404 page is displayed correctly
+MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
 
 
 
@@ -141,3 +171,33 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'myapp.User'
 
+
+
+
+
+# settings.py
+# # settings.py
+
+# # settings.py
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'aliafawi51@gmail.com'
+# EMAIL_HOST_PASSWORD = 'mmllmkmm'  # Your email password
+
+
+
+
+
+# # settings.py
+
+# # settings.py
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'aliafawi51@gmail.com'
+EMAIL_HOST_PASSWORD = 'lkgj usrb mkbo twqv '  # Use the app password you generated
+DEFAULT_FROM_EMAIL = 'aliafawi51@gmail.com'
